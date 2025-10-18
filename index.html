@@ -13,55 +13,60 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header class="site-header">
-    <div class="topbar">
-      <div class="container topbar__inner">
-        <span class="topbar__brand">X Aniversario</span>
-        <nav class="topbar__links" aria-label="Accesos">
-          <a href="#" aria-label="Idioma">ES</a>
-          <a href="#" aria-label="Accesibilidad">A+</a>
-        </nav>
+ <!-- ===== HEADER ===== -->
+<header class="cr-header">
+  <div class="cr-topbar">
+    <div class="cr-container cr-topbar__row">
+      <div class="cr-topbar__left">
+        <div class="cr-topbar__title">X Aniversario</div>
+        <div class="cr-topbar__sub">Servicio, compromiso y deber</div>
+      </div>
+
+      <div class="cr-topbar__brand" aria-label="Casa de Su Majestad el Rey">
+        <img class="cr-crest" src="/img/crest.svg" alt="" width="44" height="56">
+        <div class="cr-brand__title">Casa de Su Majestad el Rey</div>
+        <div class="cr-flag" aria-hidden="true">
+          <span class="cr-flag__red"></span>
+          <span class="cr-flag__yellow"></span>
+          <span class="cr-flag__red"></span>
+        </div>
+      </div>
+
+      <div class="cr-topbar__right">
+        <button class="cr-lang" aria-haspopup="listbox" aria-label="Idioma actual">ES ▾</button>
+        <button class="cr-search" aria-label="Buscar">
+          <!-- icono lupa -->
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
       </div>
     </div>
+  </div>
 
-    <div class="container header__bar">
-      <a class="logo" href="/" aria-label="Inicio">
-        <span class="logo__emblem" aria-hidden="true"></span>
-        <span class="logo__text">Casa de Su Majestad el Rey</span>
-      </a>
+  <!-- ===== HERO ===== -->
+  <section class="cr-hero">
+    <div class="cr-container cr-hero__grid">
+      <figure class="cr-hero__photo">
+        <!-- usa tu imagen real; tamaño recomendado 1600×2000 recortada a la izquierda -->
+        <img src="/img/hero-familia.webp" alt="Sus Majestades los Reyes" width="1280" height="1600" loading="eager">
+      </figure>
 
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
-
-      <nav id="nav" class="nav" aria-label="Principal">
-        <ul class="nav__list">
-          <li><a class="nav__link" href="#">La Familia Real</a></li>
-          <li><a class="nav__link" href="#">Actividades y Agenda</a></li>
-          <li><a class="nav__link" href="#">La Corona Hoy</a></li>
-          <li><a class="nav__link" href="#">Transparencia</a></li>
-          <li><a class="nav__link" href="#">Multimedia</a></li>
-        </ul>
-      </nav>
+      <aside class="cr-hero__quote">
+        <div class="cr-quote__marks" aria-hidden="true">“ ”</div>
+        <p class="cr-quote__text">
+          La independencia de la Corona, su neutralidad política y su vocación integradora ante las diferentes opciones
+          ideológicas, le permiten contribuir a la estabilidad de nuestro sistema político, facilitar el equilibrio con
+          los demás órganos constitucionales y territoriales, favorecer el ordenado funcionamiento del Estado y ser
+          cauce para la cohesión entre los españoles.
+        </p>
+        <p class="cr-quote__author">S.M. el Rey Don Felipe VI</p>
+        <p class="cr-quote__place">Madrid, 19.6.2014</p>
+      </aside>
     </div>
-  </header>
+  </section>
+</header>
 
-  <main>
-    <!-- HERO: imagen + cita en azul -->
-    <section class="hero">
-      <div class="container hero__grid">
-        <figure class="hero__media">
-          <img src="/img/hero-familia.webp" alt="Sus Majestades los Reyes" width="1280" height="960" loading="eager">
-        </figure>
-
-        <aside class="quote">
-          <div class="quote__mark" aria-hidden="true">❝</div>
-          <p class="quote__text">
-            La independencia de la Corona, su neutralidad política y su integración con las instituciones son esenciales para nuestra vida pública.
-          </p>
-          <p class="quote__author">S.M. el Rey — <span class="quote__date">Mensaje 24/12/2024</span></p>
-        </aside>
-      </div>
-    </section>
 
     <!-- DESTACADO -->
     <section class="lead section">
