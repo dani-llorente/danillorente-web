@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Casa de S.M. el Rey — Inicio</title>
 
   <!-- Tipografías -->
@@ -11,80 +11,259 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
-
 <body>
-  <!-- ===== HEADER ===== -->
-  <header class="topbar">
-    <div class="container topbar-inner">
-      <div class="logo">
-        <img src="/img/logo-casareal.svg" alt="Casa de S.M. el Rey" />
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container topbar__inner">
+        <span class="topbar__brand">X Aniversario</span>
+        <nav class="topbar__links" aria-label="Accesos">
+          <a href="#" aria-label="Idioma">ES</a>
+          <a href="#" aria-label="Accesibilidad">A+</a>
+        </nav>
       </div>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#">La Familia Real</a></li>
-          <li><a href="#">Actividades y Agenda</a></li>
-          <li><a href="#">La Corona Hoy</a></li>
-          <li><a href="#">Multimedia</a></li>
-          <li><a href="#">Enlaces</a></li>
+    </div>
+
+    <div class="container header__bar">
+      <a class="logo" href="/" aria-label="Inicio">
+        <span class="logo__emblem" aria-hidden="true"></span>
+        <span class="logo__text">Casa de Su Majestad el Rey</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
+
+      <nav id="nav" class="nav" aria-label="Principal">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#">La Familia Real</a></li>
+          <li><a class="nav__link" href="#">Actividades y Agenda</a></li>
+          <li><a class="nav__link" href="#">La Corona Hoy</a></li>
+          <li><a class="nav__link" href="#">Transparencia</a></li>
+          <li><a class="nav__link" href="#">Multimedia</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- ===== HERO / DESTACADO ===== -->
-  <section class="hero">
-    <div class="container hero-inner">
-      <img src="/img/rey-reina.jpg" alt="Sus Majestades los Reyes">
-      <blockquote>
-        <p>
-          “La independencia de la Corona, su neutralidad política y su papel integrador son valores esenciales para la convivencia democrática y el progreso de España.”
-        </p>
-        <cite>S.M. el Rey Don Felipe VI</cite>
-      </blockquote>
-    </div>
-  </section>
+  <main>
+    <!-- HERO: imagen + cita en azul -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <figure class="hero__media">
+          <img src="/img/hero-familia.webp" alt="Sus Majestades los Reyes" width="1280" height="960" loading="eager">
+        </figure>
 
-  <!-- ===== DESTACADO ===== -->
-  <section class="highlight">
-    <div class="container">
-      <h2>Acto central del “Día de las Fuerzas Armadas 2025”</h2>
-      <p>Sus Majestades los Reyes han presidido el acto central del Día de las Fuerzas Armadas celebrado en Oviedo.</p>
-      <a href="#" class="btn">Ver noticia</a>
-    </div>
-  </section>
+        <aside class="quote">
+          <div class="quote__mark" aria-hidden="true">❝</div>
+          <p class="quote__text">
+            La independencia de la Corona, su neutralidad política y su integración con las instituciones son esenciales para nuestra vida pública.
+          </p>
+          <p class="quote__author">S.M. el Rey — <span class="quote__date">Mensaje 24/12/2024</span></p>
+        </aside>
+      </div>
+    </section>
 
-  <!-- ===== ACTIVIDADES ===== -->
-  <section class="activities">
-    <div class="container">
-      <h2>Actividades</h2>
-      <div class="cards">
-        <article class="card">
-          <img src="/img/actividad1.jpg" alt="">
-          <h3>Encuentro en La Palma con los afectados por la erupción del volcán</h3>
-        </article>
-        <article class="card">
-          <img src="/img/actividad2.jpg" alt="">
-          <h3>Clausura de la XVII Convención de “Héroes de la Producción”</h3>
-        </article>
-        <article class="card">
-          <img src="/img/actividad3.jpg" alt="">
-          <h3>Asistencia al ejercicio anual de defensa en aguas del Atlántico</h3>
+    <!-- DESTACADO -->
+    <section class="lead section">
+      <div class="container">
+        <h2 class="section-title">Destacado</h2>
+
+        <article class="lead-card">
+          <div class="lead-card__media">
+            <img src="/img/destacado.webp" alt="Acto central del Día de las Fuerzas Armadas" width="1440" height="810">
+          </div>
+          <div class="lead-card__body">
+            <span class="badge">Actividades</span>
+            <h3 class="lead-card__title">Acto central del “Día de las Fuerzas Armadas 2025”</h3>
+            <p class="lead-card__meta">Sevilla — 17/06/2025</p>
+            <p class="lead-card__excerpt">Sus Majestades presiden el acto central con parada militar y homenaje a los caídos…</p>
+            <a class="btn btn--primary" href="#">Ver noticia</a>
+          </div>
         </article>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-inner">
-      <div class="footer-links">
-        <a href="#">Transparencia</a>
-        <a href="#">Funciones del Jefe del Estado</a>
-        <a href="#">Regulación Constitucional</a>
-        <a href="#">Memoria de Actividades</a>
+    <!-- ACTIVIDADES (grid de 3) -->
+    <section class="activities section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Actividades</h2>
+          <a class="link-more" href="#">Ver agenda completa</a>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <img class="card__img" src="/img/card-1.webp" alt="" width="640" height="426" loading="lazy">
+            <div class="card__body">
+              <span class="badge">Agenda</span>
+              <h3 class="card__title">Encuentro en La Palma</h3>
+              <p class="card__text">Reunión con los afectados por la erupción del volcán Tajogaite…</p>
+              <a class="card__link" href="#">Ver detalle</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card__img" src="/img/card-2.webp" alt="" width="640" height="426" loading="lazy">
+            <div class="card__body">
+              <span class="badge">Audiencia</span>
+              <h3 class="card__title">Despedida al Embajador</h3>
+              <p class="card__text">Audiencia en el Palacio de la Zarzuela…</p>
+              <a class="card__link" href="#">Ver detalle</a>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card__img" src="/img/card-3.webp" alt="" width="640" height="426" loading="lazy">
+            <div class="card__body">
+              <span class="badge">Cultura</span>
+              <h3 class="card__title">Entrega de premios</h3>
+              <p class="card__text">Reconocimiento a la labor de jóvenes investigadores…</p>
+              <a class="card__link" href="#">Ver detalle</a>
+            </div>
+          </article>
+        </div>
       </div>
-      <p>© Casa de S.M. el Rey - 2025</p>
+    </section>
+
+    <!-- FOTO GRANDE -->
+    <section class="feature-photo">
+      <div class="container">
+        <h2 class="section-title">Actualidad en imágenes</h2>
+      </div>
+      <figure class="feature-photo__media">
+        <img src="/img/feature.webp" alt="Actualidad en imágenes" width="1920" height="900" loading="lazy">
+      </figure>
+    </section>
+
+    <!-- ÚLTIMOS DISCURSOS -->
+    <section class="speeches section">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="section-title">Últimos discursos</h2>
+          <a class="link-more" href="#">Ver todos</a>
+        </div>
+
+        <div class="speech-list">
+          <article class="speech">
+            <header class="speech__head">
+              <img class="avatar" src="/img/avatar-rey.webp" alt="" width="40" height="40">
+              <div>
+                <h3 class="speech__title">Mensaje de Navidad 2024</h3>
+                <p class="speech__meta">Palacio Real — 24/12/2024</p>
+              </div>
+            </header>
+            <p class="speech__excerpt">“Nuestra Constitución garantiza la convivencia y el progreso…”</p>
+            <a class="speech__link" href="#">Ver discurso</a>
+          </article>
+
+          <article class="speech">
+            <header class="speech__head">
+              <img class="avatar" src="/img/avatar-leonor.webp" alt="" width="40" height="40">
+              <div>
+                <h3 class="speech__title">Intervención en Covadonga</h3>
+                <p class="speech__meta">Oviedo — 20/10/2024</p>
+              </div>
+            </header>
+            <p class="speech__excerpt">“Sirvamos a España con responsabilidad y entrega…”</p>
+            <a class="speech__link" href="#">Ver discurso</a>
+          </article>
+
+          <article class="speech">
+            <header class="speech__head">
+              <img class="avatar" src="/img/avatar-reina.webp" alt="" width="40" height="40">
+              <div>
+                <h3 class="speech__title">Acto de clausura</h3>
+                <p class="speech__meta">Madrid — 18/09/2024</p>
+              </div>
+            </header>
+            <p class="speech__excerpt">Clausura de la convención sobre innovación y salud…</p>
+            <a class="speech__link" href="#">Ver discurso</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIDEO CTA -->
+    <section class="video-cta section">
+      <div class="container video-cta__grid">
+        <div class="video-cta__copy">
+          <h2 class="section-title">Mensaje de Navidad S.M. el Rey 2024</h2>
+          <a class="btn btn--primary" href="#">Ver vídeo</a>
+        </div>
+        <figure class="video-cta__media">
+          <img src="/img/video-thumb.webp" alt="Miniatura del vídeo" width="1280" height="720" loading="lazy">
+          <button class="play" aria-label="Reproducir">▶</button>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ENLACES DE INTERÉS -->
+    <section class="links section">
+      <div class="container">
+        <h2 class="section-title">Enlaces de interés</h2>
+        <div class="linkgrid">
+          <a class="linktile" href="#"><span>Convenios con la Administración del Estado</span></a>
+          <a class="linktile" href="#"><span>Transparencia</span></a>
+          <a class="linktile" href="#"><span>Funciones del Jefe del Estado</span></a>
+          <a class="linktile" href="#"><span>Información económica</span></a>
+          <a class="linktile" href="#"><span>Regulación Constitucional</span></a>
+          <a class="linktile" href="#"><span>Memoria de actividades 2023</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer__grid">
+      <div class="footer__col">
+        <h4 class="footer__title">La Familia Real</h4>
+        <ul class="foot-list">
+          <li><a href="#">S.M. el Rey</a></li>
+          <li><a href="#">S.M. la Reina</a></li>
+          <li><a href="#">S.A.R. la Princesa</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__title">Actividades y Agenda</h4>
+        <ul class="foot-list">
+          <li><a href="#">Agenda</a></li>
+          <li><a href="#">Audiencias</a></li>
+          <li><a href="#">Discursos</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__title">La Corona Hoy</h4>
+        <ul class="foot-list">
+          <li><a href="#">Funciones</a></li>
+          <li><a href="#">Símbolos</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4 class="footer__title">Transparencia</h4>
+        <ul class="foot-list">
+          <li><a href="#">Información económica</a></li>
+          <li><a href="#">Regulación</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container foot-legal">
+      <p>© <span id="y"></span> Casa de S.M. el Rey</p>
     </div>
   </footer>
+
+  <script>
+    // Año actual
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Menú móvil
+    const btn = document.querySelector('.nav-toggle');
+    const nav = document.getElementById('nav');
+    btn?.addEventListener('click', () => {
+      const open = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!open));
+      nav.classList.toggle('nav--open');
+    });
+  </script>
 </body>
 </html>
