@@ -1,15 +1,22 @@
 name: Deploy PRE (Plesk)
+
 on:
   push:
     branches: [ "main" ]
+  workflow_dispatch: {}   # permite lanzarlo manualmente desde Actions
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Trigger Plesk deploy webhook
+      - name: Llamar al webhook de Plesk
         run: |
-          curl -sS -X POST \
-            -H "Content-Type: application/json" \
-            "${{ secrets.PLESK_WEBHOOK_URL }}" \
-            -d '{"event":"push"}'
+          echo "Ping a: ${{ secrets.PLESK_WEBHOOK_URL }}"
+          STATUS=$(curl -sS -o /dev/null -w "%{http_code}" \
+                   -X POST -H "Content-Type: application/json" \
+                   "${{ secrets.PLESK_WEBHOOK_URL }}" \
+                   -d '{"event":"push"}' || true)
+          echo "HTTP status: $STATUS"
+          if [ "$STATUS" -lt 200 ] || [ "$STATUS" -ge 300 ]; then
+            echo "Webhook call failed"; exit 1
+          fi
